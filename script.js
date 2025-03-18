@@ -17,3 +17,13 @@ container.addEventListener('click', function(e){
 		e.target.classList.add('active');
 	}
 })
+
+// untuk slider
+var counter = 1;
+		setInterval(function() {
+			document.getElementById('radio'+ counter).checked =true;
+			counter++;
+			if(counter > 4){
+				counter = 1;
+			}
+		},5000);
