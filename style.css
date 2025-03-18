@@ -14,7 +14,6 @@
 body{
   font-family: "arial", sans-serif;
   color: #fff;
-  height: 2000px;
   background-color: black;
 }
 
@@ -28,7 +27,9 @@ body{
   width: 100%;
   background-color: black;
   border-bottom: 1px solid rgb(0, 0, 254 );
-}
+  position: fixed;
+  z-index: 999;
+  }
 
 .navbar .navbar-menu{
   display: flex;
@@ -93,13 +94,13 @@ text-align: center;
 
 .header .identitas .greeting-2,
 .about-detail,
-.hobies-detail{
+.hobies-detail, .porto-detail{
 font-size: 1.5rem;
 }
 
 .header .identitas .my-name, 
 .about-me,
-.my-hobies{
+.my-hobies, .porto-title{
 font-size: 4.5rem;
 }
 
@@ -111,7 +112,7 @@ font-size: 4.5rem;
 
 /*About Start*/
 .about{
-  min-height: 60vh;
+  min-height: 70vh;
   background-color: black;
   display: flex;
   align-items: center;
@@ -143,11 +144,9 @@ font-size: 4.5rem;
 /*Hobies Start*/
 
 .hobies{
-  text-align: center;
-  align-items: center;
   display: flex;
-  max-height: 1500px;
   justify-content: center;
+  padding-top: 400px;
   background-image: url(img/2.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -155,23 +154,44 @@ font-size: 4.5rem;
   position: relative;
 }
 
-.hobies-content{
+.hobies-content
+,.porto-content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center; 
+  justify-content: center;
   width: 90%;
-  margin: 600px auto; 
+  margin-bottom: 120px;
 }
 
+.hobies-text
+,.porto-text{
+  width: 75%;
+  margin-bottom: 90px;
+}
+
+.hobies-detail,.porto-detail{
+  margin-top: 35px;
+}
 .container{
-  display: flex;
-  width: 90%;
-  height: 900px;
+  width: 70%;
   margin: 10px auto;
   border: 5px solid white;
   overflow: auto;
+  border-bottom: 150p;
+}
+.jumbo{
+  width: 100%;
 }
 
+.thumbnail{
+  display: flex;
+  justify-content: space-around;
+}
 
 .thumb{
-  width: 200px;
+  width: 15rem;
   border: 2px solid white;
   box-sizing: border-box;
 }
@@ -197,6 +217,130 @@ font-size: 4.5rem;
   opacity: 0.5;
 }
 
+
+/*Portofolio Start*/
+
+.porto {
+  padding-top: 120px;
+  display: flex;
+  align-items: center;
+  background-image: url("img/3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  justify-content: center;
+}
+
+
+.slider{
+  width: 1200px;
+  height: 800px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slides{
+  width: 500%;
+  height: 800px;
+  display: flex;
+}
+
+.slides input{
+  display: none;
+}
+
+.slide{
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img{
+  width: 1200px;
+  height: 800px;
+}
+
+
+/*css for manual slide navigation*/
+
+.navigation-manual{
+  position: absolute;
+  width: 1200px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn{
+  border: 2px solid #40d3dc;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 40px;
+}
+
+.manual-btn:hover{
+  background: #40d3dc;
+}
+
+#radio1:checked ~.first{
+  margin-left: 0;
+}
+
+#radio2:checked ~.first{
+  margin-left: -20%;
+}
+
+#radio3:checked ~.first{
+  margin-left: -40%;
+}
+
+#radio4:checked ~.first{
+  margin-left: -60%;
+}
+
+
+/*css for automatic slide*/
+
+.navigation-auto{
+  position: absolute;
+  display: flex;
+  width: 1200px;
+  justify-content: center ;
+  margin-top: 760px;
+}
+
+.navigation-auto div{
+  border: 2px solid #40d3dc;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+
+.navigation-auto div:not(:last-child){
+  margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+  background: #40d3dc;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+  background: #40d3dc;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+  background: #40d3dc;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+  background: #40d3dc;
+}
 
 /*media Query*/
 
